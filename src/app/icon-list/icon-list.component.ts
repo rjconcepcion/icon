@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Icon } from  '../Icon';
+import { IconService } from '../icon.service';
 
 @Component({
   selector: 'app-icon-list',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IconListComponent implements OnInit {
 
-  constructor() { }
+  icons : Icon[];
+
+  constructor(private iconService: IconService) { }
 
   ngOnInit() {
+    this.getIcons();
+  }
+
+  getIcons(): void {
+    this.iconService.getIcons()
+        .subscribe(icons => this.icons = icons);
   }
 
 }
