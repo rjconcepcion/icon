@@ -4,4 +4,5 @@ export class Icon {
     hp: number;
     rock: number;
     paper: number;
+    scissor: number;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Icon } from  '../Icon';
 import { IconService } from '../icon.service';
 
@@ -11,6 +11,8 @@ export class IconListComponent implements OnInit {
 
   icons : Icon[];
 
+
+
   constructor(private iconService: IconService) { }
 
   ngOnInit() {
@@ -18,8 +20,19 @@ export class IconListComponent implements OnInit {
   }
 
   getIcons(): void {
+    console.log('starting');
     this.iconService.getIcons()
-        .subscribe(icons => this.icons = icons);
+    .subscribe(
+      icons => {
+        this.icons = icons;
+      },
+      (error: any) => {
+        console.log(error);
+      },
+      () => {
+        console.log('complete1');
+      }
+    );
   }
 
 }

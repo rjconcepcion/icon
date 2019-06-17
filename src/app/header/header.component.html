@@ -45,12 +45,12 @@
 		<div class="modal-body">
 			<div class="form-group">
 				<label for="disabledTextInput">Font awsome icon code</label>
-				<input type="text" class="form-control" placeholder="fa-code">
+				<input type="text" class="form-control" placeholder="fa-code" #iconName>
 			</div>
 		</div>
 		<div class="modal-footer">
 		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		  <button type="button" class="btn btn-success">Save changes</button>
+		  <button type="button" class="btn btn-success" (click)="add(iconName.value)">Save changes</button>
 		</div>
 	  </div>
 	</div>

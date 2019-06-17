@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { IconListComponent } from './icon-list/icon-list.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -14,7 +15,8 @@ import { IconListComponent } from './icon-list/icon-list.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    IconListComponent
+    IconListComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
